@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FEApp</string>
+
+    <string name="ok">យល់ព្រម</string>
+
+    <string name="rupp_contact">Royal University of Phnom Penh\nskjfdskjf dlkjfsdlfkjdslj fsdkjf lsdjfdkj fsdjff</string>
+    <string name="drawer_open_desc">Drawer is open</string>
+    <string name="drawer_close_desc">Drawer is closed</string>
+
+    <string-array name="album_options">
+        <item>-- All --</item>
+        <item>Album 1</item>
+        <item>Album 2</item>
+        <item>Album 3</item>
+    </string-array>
+    
+</resources>
