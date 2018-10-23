@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/primary_button"
+        android:text="Save" />
+
+    <Button
+        style="@style/primary_button.primary_button_with_cornor_radius"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/secondary_button"
+        android:text="Cancel" />
+
+</LinearLayout>

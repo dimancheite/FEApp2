@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="colorPrimary">#236386</item>
@@ -8,5 +8,30 @@
         <item name="colorAccent">#000000</item>
 
     </style>
+
+
+    <!-- Style -->
+    <style name="primary_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">#236386</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="primary_button_with_cornor_radius" parent="primary_button">
+
+    </style>
+
+    <style name="primary_button.primary_button_with_cornor_radius">
+        <item name="android:background">@drawable/bg_primary_button</item>
+    </style>
+
+    <style name="secondary_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
 
 </resources>

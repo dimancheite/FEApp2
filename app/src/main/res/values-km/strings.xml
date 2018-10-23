@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">FEApp</string>
 
-    <string name="fe">Faculty of Engineering</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="login">Login</string>
-    <string name="ok">OK</string>
+    <string name="fe">មហាវិទ្យាល័យវិស្វកម្ម</string>
+    <string name="username">ឈ្មោះចូលប្រព័ន្ធ</string>
+    <string name="password">ពាក្យសំងាត់</string>
+    <string name="login">ចូល</string>
+    <string name="ok">យល់ព្រម</string>
 
     <string name="rupp_contact">Royal University of Phnom Penh\nskjfdskjf dlkjfsdlfkjdslj fsdkjf lsdjfdkj fsdjff</string>
     <string name="drawer_open_desc">Drawer is open</string>
@@ -17,5 +17,5 @@
         <item>Album 2</item>
         <item>Album 3</item>
     </string-array>
-    
+
 </resources>
