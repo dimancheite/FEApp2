@@ -1,12 +1,14 @@
 package kh.edu.rupp.feapp;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-        //displayContactFragment();
-        displayEventsFragment();
+        displayContactFragment();
+        //displayEventsFragment();
 
     }
 
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private void displayContactFragment() {
         ContactFragment contactFragment = new ContactFragment();
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.lyt_fragment_container, contactFragment);
         fragmentTransaction.commit();
@@ -44,10 +46,15 @@ public class MainActivity extends AppCompatActivity {
     private void displayEventsFragment() {
         EventsFragment eventsFragment = new EventsFragment();
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.lyt_fragment_container, eventsFragment);
         fragmentTransaction.commit();
+    }
+
+    public void onProfileClick(View view){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
     }
 
 }

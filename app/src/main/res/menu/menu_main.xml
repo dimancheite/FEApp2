@@ -13,4 +13,8 @@
         android:icon="@drawable/ic_department"
         android:title="Departments" />
 
+    <item
+        android:icon="@drawable/ic_contact"
+        android:title="Contact" />
+
 </menu>
