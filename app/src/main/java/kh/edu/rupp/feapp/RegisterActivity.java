@@ -22,12 +22,11 @@ import com.google.android.gms.tasks.Task;
 public class RegisterActivity extends AppCompatActivity {
 
     private final int REQUEST_CODE_GENDER = 1;
-    private final int REQUEST_CODE_LOCATION_PERMISSION = 2;
 
     private TextView txtGender;
     private EditText etxtAddress;
 
-    private FusedLocationProviderClient locationProviderClient;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +36,6 @@ public class RegisterActivity extends AppCompatActivity {
         txtGender = findViewById(R.id.txt_gender);
         etxtAddress = findViewById(R.id.etxt_address);
 
-        loadUserCurrentLocation();
     }
 
     @Override
@@ -50,13 +48,9 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if(requestCode == REQUEST_CODE_LOCATION_PERMISSION && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            loadUserCurrentLocation();
-        }
+    public void onSelectOnMapClick(View view){
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
     }
 
     public void onSelectGenderClick(View view){
@@ -69,30 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_GENDER);
     }
 
-    private void loadUserCurrentLocation(){
-        locationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
-            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE_LOCATION_PERMISSION);
-            return;
-        }
-        Task<Location> locationTask = locationProviderClient.getLastLocation();
-        locationTask.addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                if(task.isSuccessful()){
-                    Location location = task.getResult();
-                    if(location != null){
-                        String locationString = location.getLatitude() + ", " + location.getLongitude();
-                        etxtAddress.setText(locationString);
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Current location not found.", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(RegisterActivity.this, "Error while getting current location.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-    }
+
 
 }
