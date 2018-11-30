@@ -17,5 +17,7 @@
         <item>Album 2</item>
         <item>Album 3</item>
     </string-array>
-    
+
+    <string name="google_map_api_key">AIzaSyBOBBCj4vuiWjZL4So-4IID2TCaQTSqvGY</string>
+
 </resources>
